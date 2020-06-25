@@ -18,7 +18,7 @@ public class Main2Activity extends AppCompatActivity {
 
     Button button_calc;
     Button button_share;
-        TextView text_for_result;
+                                //        TextView text_for_result;
     Double res;
 
     com.example.calculator.MainAdapter adapter;
@@ -42,7 +42,7 @@ public class Main2Activity extends AppCompatActivity {
 
         button_share = findViewById(R.id.button_share);
 
-        text_for_result = findViewById(R.id.text_for_result);
+                                    //        text_for_result = findViewById(R.id.text_for_result);
 
         button_calc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,10 +71,10 @@ public class Main2Activity extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE && data != null) {
             res = data.getDoubleExtra("Result", 0);
 
-//            listResult.add("Result: " + res);
-//            adapter.notifyDataSetChanged();
+            listResult.add("Result: " + res);
+            adapter.notifyDataSetChanged();
 
-            text_for_result.setText(String.valueOf(res));
+//            text_for_result.setText(String.valueOf(res));
         }
     }
 }
