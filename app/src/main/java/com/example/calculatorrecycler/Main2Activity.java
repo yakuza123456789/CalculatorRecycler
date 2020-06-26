@@ -78,6 +78,8 @@ public class Main2Activity extends AppCompatActivity {
             listResult.add("Result" + res);
             adapter.notifyDataSetChanged();
 
+
+            
 //            text_for_result.setText(String.valueOf(res));
         }
     }
