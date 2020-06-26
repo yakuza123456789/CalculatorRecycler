@@ -35,6 +35,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+
         adapter = new com.example.calculatorrecycler.MainAdapter(listResult);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -43,6 +44,7 @@ public class Main2Activity extends AppCompatActivity {
 
 
         button_calc = findViewById(R.id.button_calc);
+
 
         button_share = findViewById(R.id.button_share);
 
@@ -75,11 +77,11 @@ public class Main2Activity extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE && data != null) {
             res = data.getDoubleExtra("Result", 0);
 
+
             listResult.add("Result" + res);
             adapter.notifyDataSetChanged();
 
 
-            
 //            text_for_result.setText(String.valueOf(res));
         }
     }
