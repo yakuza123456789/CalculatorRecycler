@@ -21,8 +21,10 @@ public class Main2Activity extends AppCompatActivity {
                                 //        TextView text_for_result;
     Double res;
 
-    com.example.calculator.MainAdapter adapter;
+    com.example.calculatorrecycler.MainAdapter adapter;
+
     ArrayList<String> listResult = new ArrayList<>();
+
 
 
     public static final int REQUEST_CODE = 500;
@@ -33,10 +35,12 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        adapter = new com.example.calculatorrecycler.MainAdapter(listResult);
+
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setAdapter(adapter);
 
-        adapter = new com.example.calculator.MainAdapter(listResult);
+
 
         button_calc = findViewById(R.id.button_calc);
 
@@ -71,7 +75,7 @@ public class Main2Activity extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE && data != null) {
             res = data.getDoubleExtra("Result", 0);
 
-            listResult.add("Result: " + res);
+            listResult.add("Result" + res);
             adapter.notifyDataSetChanged();
 
 //            text_for_result.setText(String.valueOf(res));

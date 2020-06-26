@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.calculatorrecycler;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 public class MainAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
-    ArrayList<String> data;
+    private ArrayList<String> data;
 
-    public MainAdapter(ArrayList<String>data){
+    public MainAdapter(ArrayList<String> data){
         this.data = data;
     }
 
@@ -25,9 +25,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainViewHolder> {
     public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.view_holder_main, parent, false);
-        MainViewHolder mainViewHolder = new MainViewHolder(view);
-
-        return mainViewHolder;
+        return new MainViewHolder(view);
     }
 
     @Override
